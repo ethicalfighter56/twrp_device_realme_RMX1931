@@ -34,7 +34,16 @@ on fs
     export ANDROID_ROOT /system_root
     write /sys/class/power_supply/usb/otg_switch 1
 
+service variant-script /system/bin/variant-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on boot
+    start variant-script
+    start health-hal-2-1
+
     setprop sys.usb.config adb
     write /sys/class/leds/vibrator/level 2
-

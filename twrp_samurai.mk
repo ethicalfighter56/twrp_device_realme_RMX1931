@@ -15,19 +15,20 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := RMX1931
+PRODUCT_RELEASE_NAME := samurai
 
-$(call inherit-product, device/realme/RMX1931/device.mk)
+$(call inherit-product, device/realme/samurai/device.mk)
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := RMX1931
-PRODUCT_NAME := twrp_RMX1931
+PRODUCT_DEVICE := samurai
+PRODUCT_NAME := twrp_samurai
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme X2 Pro
 PRODUCT_MANUFACTURER := realme

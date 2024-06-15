@@ -1,3 +1,5 @@
+#!/system/bin/sh
+
 load_RMX1931L1()
 {
     resetprop "ro.product.device" "RMX1931L1"
@@ -23,5 +25,10 @@ case $project in
 esac
 
 resetprop "ro.build.date.utc" "1000000000"
+resetprop "ro.system.build.date.utc" "0000000000"
+resetprop "ro.system_ext.build.date.utc" "0000000000"
+resetprop "ro.vendor.build.date.utc" "0000000000"
+resetprop "ro.odm.build.date.utc" "0000000000"
+resetprop "ro.product.build.date.utc" "0000000000"
 
 exit 0
