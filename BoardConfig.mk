@@ -27,7 +27,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a73
+TARGET_2ND_CPU_VARIANT := cortex-a76
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -40,7 +40,7 @@ TARGET_BOARD_PLATFORM := msmnile
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xa90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3 androidboot.selinux=permissive buildvariant=eng
+BOARD_KERNEL_CMDLINE := androidboot.boot_devices=soc/1d84000.ufshc androidboot.console=ttyMSM0 androidboot.hardware=qcom androidboot.usbcontroller=a600000.dwc3 kpti=off loop.max_part=7 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 pm.sleep_mode=1 service_locator.enable=1 swiotlb=2048 cgroup_disable=pressure
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -97,7 +97,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_REAL_SDCARD := true
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Crypto
 BOARD_USES_METADATA_PARTITION := true
@@ -107,10 +107,12 @@ TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_USE_FSCRYPT_POLICY := 1
 
+
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+BOARD_USES_QCOM_HARDWARE := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
