@@ -26,6 +26,10 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
+# Ozip Decryption
+PRODUCT_PACKAGES += \
+    ozip_decrypt
+
 # Recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
